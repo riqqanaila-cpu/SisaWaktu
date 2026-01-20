@@ -7,6 +7,8 @@ export enum ExpiryStatus {
   EXPIRED = 'EXPIRED'
 }
 
+export type ViewMode = 'grid' | 'list';
+
 export interface UserSettings {
   browserAlerts: boolean;
   leadDays: number;
@@ -18,7 +20,10 @@ export interface ExpiryItem {
   category: Category;
   expiryDate: string;
   createdAt: number;
-  isPriority?: boolean; // H-3 items
+  imageUrl?: string;
+  price?: number; // Added for savings tracking
+  isUsed?: boolean; // Added to track salvaged items
+  isPriority?: boolean;
 }
 
 export interface StatusColors {
@@ -26,4 +31,5 @@ export interface StatusColors {
   text: string;
   border: string;
   dot: string;
+  glow: string;
 }
